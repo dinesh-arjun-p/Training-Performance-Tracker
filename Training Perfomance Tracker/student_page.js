@@ -1,0 +1,83 @@
+
+document.getElementById('language-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Logic to submit and validate the programming language certificate
+    document.getElementById('language-validation').innerHTML = "<p>Certificate is under review by teacher.</p>";
+    
+});
+
+document.getElementById('activity-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Logic to submit and validate extracurricular activity certificate
+    document.getElementById('activity-validation').innerHTML = "<p>Activity is under review by teacher.</p>";
+});
+
+document.getElementById("language-form").addEventListener("submit", function (event) {
+    const selectedPrize = document.querySelector('input[name="prize"]:checked');
+    if (!selectedPrize) {
+        alert("Please select a prize before submitting!");
+        event.preventDefault(); // Prevent form submission
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Query all `.inner_training_content` elements
+    const trainingContents = document.querySelectorAll(".inner_training_content");
+
+    trainingContents.forEach((content) => {
+        // Check if the content overflows
+        if (content.scrollHeight > content.clientHeight) {
+            // Find the `.scroll` element that comes before the `.inner_training_content` in the DOM
+            const scrollElement = content.closest(".training").querySelector(".scroll");
+            if (scrollElement) {
+                // Add margin-right to the `.scroll` element
+                scrollElement.style.marginRight = "20px";
+            }
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const view = urlParams.get("view");
+
+    if (view === "teacher") {
+        // Hide input sections for teachers
+        const inputSections = document.querySelectorAll(".input");
+        inputSections.forEach(section => {
+            section.style.display = "none";
+        });
+    }
+});
+
+
+
+
+
+
+
+// JavaScript for Chart.js initialization
+var ctx = document.getElementById('sgpa-chart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',  // Example chart type
+    data: {
+        labels: ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4'],
+        datasets: [{
+            label: 'SGPA',
+            data: [7.5, 8.0, 7.8, 8.2],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,  // Makes the chart responsive
+        maintainAspectRatio: false,  // Ensures the aspect ratio can change to fit the container
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+

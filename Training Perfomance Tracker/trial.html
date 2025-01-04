@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+h1.att{
+  background-color: aqua;
+}
+.flex-container {
+    display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1 class ="att">Responsive Flexbox</h1>
+
+<p class="att">In this example, we change the percentage of flex to create different layouts for different screen sizes.</p>
+<p><b>Resize the browser window to see that the direction changes when the 
+screen size is 800px or smaller.</b></p>
+<div style="display: grid;grid-template-columns: 1fr 1fr;">
+    <div style="background-color: aqua;max-width: 500px;min-width: 300px;"></div>
+    <div style="background-color: rgb(131, 222, 35);height:100px"></div>
+</div>
+
+</body>
+</html>

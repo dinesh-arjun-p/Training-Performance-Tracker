@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="container" id="login-container">
+            <div class="title">
+               Login Form
+            </div>
+            <form action="#">
+               <div class="field">
+                  <input type="text" required>
+                  <label>Email Address</label>
+               </div>
+               <div class="field">
+                  <input type="password" required>
+                  <label>Password</label>
+               </div>
+               <div class="content">
+                  <div class="checkbox">
+                     <input type="checkbox" id="remember-me">
+                     <label for="remember-me">Remember me</label>
+                  </div>
+                  <div class="pass-link">
+                     <a href="#">Forgot password?</a>
+                  </div>
+               </div>
+               <div class="field">
+                  <input type="submit" onclick="handleLogin()" value="Login">
+               </div>
+               <div class="signup-link">
+                  <a href="#" class="toggle-link" onclick="showRegisterPage()">New User ? Register Here</a>
+               </div>
+            </form>
+         </div>
+            <div class="container" id="register-container" style="display: none;">
+               <div class="title">
+                  Register Form
+               </div>
+               <form action="#">
+                  <div class="field">
+                     <input type="text" required>
+                     <label>Email Address</label>
+                  </div>
+                  <div class="field">
+                     <input type="password" required>
+                     <label>Password</label>
+                  </div>
+                  <div class="field">
+                     <input type="password" required>
+                     <label>Confirm Password</label>
+                  </div>
+                  <div class="field">
+                     <input type="submit" onclick="handleRegister()" value="Register">
+                  </div>
+                  <div class="signup-link">
+               <a href="#" class="toggle-link" onclick="showLoginPage()">Already registered? Login</a>
+           </div>
+         </form>
+      </div>
+      <script>
+         function showRegisterPage() {
+             document.getElementById('login-container').style.display = 'none';
+             document.getElementById('register-container').style.display = 'block';
+         }
+ 
+         function showLoginPage() {
+             document.getElementById('register-container').style.display = 'none';
+             document.getElementById('login-container').style.display = 'block';
+         }
+ 
+         function handleLogin() {
+             // Placeholder: Add login logic here
+             alert('Login functionality to be implemented!');
+         }
+ 
+         function handleRegister() {
+             // Placeholder: Add registration logic here
+             alert('Registration functionality to be implemented!');
+             showLoginPage();
+         }
+     </script>
+   </body>
+</html>

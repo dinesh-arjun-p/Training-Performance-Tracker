@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="student_teacher_admin.css">
+</head>
+<body>
+
+    <!-- Admin Info Section -->
+    <div class="admin-info">
+        <h1>Admin Dashboard</h1>
+        
+        <div class="admin-details">
+            <p><strong>Name:</strong> <span id="admin-name">Mr. Alex Johnson</span></p>
+            <p><strong>Roll No:</strong> <span id="admin-rollno">1001</span></p>
+            <p><strong>Department:</strong> <span id="admin-department">Administration</span></p>
+        </div>
+
+        <!-- Search Student Section -->
+        <div class="search-student">
+            <h3>Search Student</h3>
+            <input type="text" id="search-input" placeholder="Enter student name, roll number, or email">
+            <button onclick="searchStudent()">Search</button>
+        </div>
+
+        <!-- Talent Filter Section -->
+        <div class="talent-filter">
+            <h3>Filter Students by Talents</h3>
+            <input type="text" id="talent-input" placeholder="Enter talent (e.g., Python, C, Table Tennis)">
+            <button onclick="filterByTalent()">Filter</button>
+        </div>
+
+        <!-- Student Details Section (Visible after searching) -->
+        <div class="student-details" id="student-details" style="display: none;">
+            <h3>Student Details</h3>
+            <img src="student_photo.jpg" alt="Student Photo" class="student-photo">
+            <h2 id="student-name-details">John Doe</h2>
+            <p><strong>Roll No:</strong> <span id="student-rollno">12345</span></p>
+            <p><strong>Email:</strong> <span id="student-email">johndoe@example.com</span></p>
+            <p><strong>Department:</strong> <span id="student-department">Computer Science</span></p>
+            <p><strong>Current CGPA:</strong> <span id="student-cgpa">8.5</span></p>
+            <h3>Achievements and Talents</h3>
+            <ul id="achievements-list">
+                <li>Python Programming - Certified</li>
+                <li>Table Tennis - Winner of Inter-College Championship</li>
+            </ul>
+            <button onclick="goBack()">Back to Search</button>
+        </div>
+
+        <!-- Filtered Students Section (Based on Talent Filter) -->
+        <div class="filtered-students" id="filtered-students" style="display: none;">
+            <h3>Filtered Students</h3>
+            <table id="filtered-student-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Roll No</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filtered student entries will be dynamically generated here -->
+                    <tr>
+                        <td>John Doe</td>
+                        <td>12345</td>
+                        <td>johndoe@example.com</td>
+                        <td>Computer Science</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <script src="admin_page.js"></script>
+</body>
+</html>
