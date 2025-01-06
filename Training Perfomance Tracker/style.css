@@ -129,3 +129,56 @@ form .pass-link a:hover,
 form .signup-link a:hover{
   text-decoration: underline;
 }
+/* Style for the select field */
+form .field select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: #262626;
+  appearance: none; /* Remove the default dropdown arrow for custom styling */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  position: relative;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cpath d='M70 105L15 40h110z' fill='%234158d0'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center; /* Adjust arrow position */
+  background-size: 15px; /* Size of the arrow */
+}
+
+form .field select:focus,
+form .field select:valid {
+  border-color: #4158d0;
+}
+
+form .field select option {
+  color: #262626;
+}
+
+/* Label styling when used with select */
+form .field select ~ label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+form .field select:focus ~ label,
+form .field select:valid ~ label {
+  top: 0%;
+  font-size: 16px;
+  color: #4158d0;
+  background: #fff;
+  transform: translateY(-50%);
+}
+

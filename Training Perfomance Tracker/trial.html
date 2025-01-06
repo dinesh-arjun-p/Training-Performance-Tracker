@@ -33,6 +33,36 @@ h1.att{
     flex: 100%;
   }
 }
+/* Default Scrollable State */
+.filter-overflow {
+    max-height: 400px; /* Limit height for scrollable view */
+    overflow-y: auto; /* Enable vertical scroll */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Maximized State */
+.filter-overflow.maximized {
+    max-height: none; /* Remove height restriction */
+    overflow: visible; /* Show full content */
+}
+
+/* Button Styling */
+#maximize-btn {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#maximize-btn:hover {
+    background-color: #0056b3;
+}
+
 </style>
 </head>
 <body>
@@ -47,5 +77,57 @@ screen size is 800px or smaller.</b></p>
     <div style="background-color: rgb(131, 222, 35);height:100px"></div>
 </div>
 
+<div class="filtered-students" id="filtered-students">
+  <h3>Filtered Students</h3>
+  <button id="maximize-btn" onclick="toggleMaximize()">Maximize</button>
+  <div class="filter-overflow" id="filter-overflow">
+      <table id="filtered-student-table">
+          <thead>
+              <tr>
+                  <th>Student Name</th>
+                  <th>Roll No</th>
+                  <th>C</th>
+                  <th>Python</th>
+                  <th>Java</th>
+                  <th>Full Stack</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>John Doe</td>
+                  <td>R1234</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>3</td>
+                  <td>2</td>
+              </tr>
+              <tr>
+                  <td>Jane Smith</td>
+                  <td>R5678</td>
+                  <td>5</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>3</td>
+              </tr>
+              <!-- Add more rows as needed -->
+          </tbody>
+      </table>
+  </div>
+</div>
+<script>function toggleMaximize() {
+  const overflowContainer = document.getElementById('filter-overflow');
+  const maximizeButton = document.getElementById('maximize-btn');
+
+  if (overflowContainer.classList.contains('maximized')) {
+      // Revert to scrollable view
+      overflowContainer.classList.remove('maximized');
+      maximizeButton.textContent = 'Maximize';
+  } else {
+      // Expand the table to full view
+      overflowContainer.classList.add('maximized');
+      maximizeButton.textContent = 'Minimize';
+  }
+}
+</script>
 </body>
 </html>

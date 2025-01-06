@@ -3,17 +3,18 @@ function searchStudent() {
     const searchInput = document.getElementById("search-input").value.trim().toLowerCase();
 
     const studentPages = {
-        "dinesh arjun": "student_page.html?view=teacher",
+        "7376221ec152": "student_page.html?view=teacher",
         "john doe": "john_doe_page.html?view=teacher",
         "jane smith": "jane_smith_page.html?view=teacher"
     };
-
+    
     if (studentPages[searchInput]) {
         window.location.href = studentPages[searchInput];
     } else {
         alert("Student not found. Please try again.");
     }
 }
+
 
 
 // Function to navigate to the student details page

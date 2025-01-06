@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher's Validation Page</title>
-    <link rel="stylesheet" href="student_teacher_admin.css">
+    <link rel="stylesheet" href="teacher.css">
 </head>
 <body>
 
@@ -12,12 +12,18 @@
     <div class="teacher-info">
         <h1>Teacher Dashboard</h1>
         
+        
         <div class="teacher-details">
-            <p><strong>Name:</strong> <span id="teacher-name">Ms. Sarah Williams</span></p>
-            <p><strong>Roll No:</strong> <span id="teacher-rollno">12345</span></p>
-            <p><strong>Department:</strong> <span id="teacher-department">Computer Science</span></p>
-        </div>
 
+            <div class="basic_details" >
+                <img src="/Images/teacher_photo.jpg" alt="Student Photo" class="teacher-photo">
+                <h2 id="student-name">RAJ KUMAR</h2>
+                <p><strong>Roll No:</strong> <span id="cgpa">12345</span></p>
+                <p><strong>Email:</strong> <span id="cgpa">rajkumarhi@bitsathy.ac.in</span></p>
+                <p><strong>Phone:</strong> <span id="cgpa">+91 7010357813</span></p>
+                <p><strong>Department:</strong> <span id="cgpa">Information Technology</span></p>
+            </div>
+        </div>  
         <!-- Search Student Section -->
         <div class="search-student">
             <h3>Search Student</h3>
@@ -58,42 +64,6 @@
             </table>
         </div>
 
-    </div>
-
-    <!-- Student Details View Page (for when teacher clicks search result) -->
-    <div id="student-details-page" style="display: none;">
-        <h1>Student Details</h1>
-        <div class="student-details">
-            <img src="student_photo.jpg" alt="Student Photo" class="student-photo">
-            <h2 id="student-name-details">John Doe</h2>
-            <p><strong>Current CGPA:</strong> <span id="cgpa-details">8.5</span></p>
-            <h3>Semester SGPA Comparison</h3>
-            <canvas id="sgpa-chart-details"></canvas> <!-- For bar chart -->
-            <p><strong>Attendance:</strong> <span id="attendance-details">85%</span></p>
-            <h3>Training Completed</h3>
-            <ul id="training-details">
-                <li>BYTS - Completed</li>
-                <li>Problem Solving - Completed</li>
-            </ul>
-            <h3>Reward Points</h3>
-            <p id="reward-points-details">2500 points</p>
-            <div id="reward-details">
-                <ul>
-                    <li>Hackathon Competition - 1000 points (Staff: Mr. Smith)</li>
-                    <li>C Level 1 - 300 points (Staff: Ms. Jane)</li>
-                </ul>
-            </div>
-            <h3>Programming Languages Known</h3>
-            <ul id="languages-details">
-                <li>Python (Certified)</li>
-            </ul>
-            <h3>Extracurricular Activities</h3>
-            <ul id="activities-details">
-                <li>Best Innovator Award 2023</li>
-                <li>Winner of National Quiz Competition</li>
-            </ul>
-            <button onclick="goBack()">Back to Search</button>
-        </div>
     </div>
 
     <script src="teacher_page.js"></script>

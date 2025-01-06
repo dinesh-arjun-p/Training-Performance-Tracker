@@ -6,11 +6,7 @@ document.getElementById('language-form').addEventListener('submit', function(eve
     
 });
 
-document.getElementById('activity-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // Logic to submit and validate extracurricular activity certificate
-    document.getElementById('activity-validation').innerHTML = "<p>Activity is under review by teacher.</p>";
-});
+
 
 document.getElementById("language-form").addEventListener("submit", function (event) {
     const selectedPrize = document.querySelector('input[name="prize"]:checked');
@@ -43,12 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (view === "teacher") {
         // Hide input sections for teachers
-        const inputSections = document.querySelectorAll(".input");
+        const inputSections = document.querySelectorAll(".input-section");
         inputSections.forEach(section => {
             section.style.display = "none";
         });
+        const achieve = document.querySelector(".achievements");
+            achieve.style.gridTemplateColumns = "1fr";
     }
 });
+
+    
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const view = urlParams.get("view");
+
+    // Show the "Go Back to Search" button if view=teacher
+    if (view === "teacher") {
+        document.getElementById("go-back-btn").style.display = "block";
+    }
+});
+
+function goBackToSearch() {
+    // Navigate to the previous page or a specific search page
+    window.history.back(); // Go back to the previous page
+    // OR specify a custom URL
+    // window.location.href = "/search-page.html";
+}
+
 
 
 
